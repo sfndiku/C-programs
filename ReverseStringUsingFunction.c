@@ -14,7 +14,6 @@ void reverse(char *y)
     char arr[100];
 
     for(i=len;i>=0;i--){
-        // printf("%c",y[i-1]); // this prints in reverse order
         arr[j]=y[i-1];
         j++;
     }
