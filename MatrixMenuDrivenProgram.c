@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 int i,j;
+
+//For getting a Matrix
 void MatRead(int p,int q,int ar[p][q],char c){
     int temp;
     printf("Enter Matrix %c\n",c);
@@ -12,8 +14,9 @@ void MatRead(int p,int q,int ar[p][q],char c){
     }
 }
 
+//For displaying a matrix
 void MatDisplay(int p,int q,int ar[p][q],char c){
-    printf("Matrix %c:\n",c);
+    printf("\nMatrix %c:\n",c);
     for(i=0;i<p;i++){
         for(j=0;j<q;j++){
             printf("%d\t",ar[i][j]);
@@ -22,7 +25,7 @@ void MatDisplay(int p,int q,int ar[p][q],char c){
     }
 }
 
-
+//For the addition of two matrices
 void MatAdd(){
     int p,q,i,j;
     printf("Type the Rows: ");
@@ -40,7 +43,7 @@ void MatAdd(){
     MatDisplay(p,q,c,'C');
 }
  
-
+//for the multiplication of two matrices
 void MatMulti(){
     
     int p,q,r,s,i,j,k;
@@ -76,6 +79,7 @@ void MatMulti(){
 
 }
 
+//for the transpose of a matrix
 void MatTrans(){
     int p,q;
     printf("Row and Coloum of the Matrix: \n");
@@ -96,13 +100,19 @@ void MatTrans(){
 
 void main() 
 {
-    int n;
-    printf("Matrix Menu:\n1 for Addition\n2 for Multiplication\n3 for Tranpose:\n");
-    scanf("%d",&n);
-    switch(n){
-        case 1: MatAdd();break;
-        case 2: MatMulti();break;
-        case 3: MatTrans();break;
-        default: printf("\nInvalid Number.");
-    }
+    int n,c;
+    
+    do
+    {
+        printf("\nMatrix Menu:\n1 for Addition\n2 for Multiplication\n3 for Tranpose:\n");
+        scanf("%d",&n);
+        switch(n){
+            case 1: MatAdd();break;
+            case 2: MatMulti();break;
+            case 3: MatTrans();break;
+            default: printf("\nInvalid Number.");
+        }
+        printf("\nDo you want to operations again(0=no/1=yes): ");
+        scanf("%d",&c);
+    }while(c!=0);
 }
